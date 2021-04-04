@@ -1,6 +1,6 @@
 Example service from https://github.com/grpc/grpc/tree/master/examples.
 
-The server is implemented using `grpcapi`; the client is typical gRPC.
+The server in `server.py` is implemented using `grpcapi`, the server in `v2server.py` is implemented using `grpcapi.v2`; the client is typical gRPC.
 
 ```
 $ python server.py
