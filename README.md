@@ -27,4 +27,4 @@ def method(request, context):
     yield pkg.service_pb2.ResponseType()
 ```
 
-See `examples/routeguide` for runnable examples with the gRPC example Route Guide service.
+See [examples/routeguide](examples/routeguide) for runnable examples with the gRPC example Route Guide service.
