@@ -12,3 +12,19 @@ def method(
     yield pkg.service_pb2.ResponseType()
     yield pkg.service_pb2.ResponseType()
 ```
+
+The `v2.App` can be used without type annotations, using only a little bit of magic.
+
+```python3
+from grpcapi.v2 import App
+from pkg_pb2_grpc import MyServiceServicer
+
+app = App()
+
+@app.rpc(MyServiceServicer.Method)
+def method(request, context):
+    yield pkg.service_pb2.ResponseType()
+    yield pkg.service_pb2.ResponseType()
+```
+
+See `examples/routeguide` for runnable examples with the gRPC example Route Guide service.
