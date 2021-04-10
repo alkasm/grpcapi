@@ -1,7 +1,7 @@
 An experiment with FastAPI/Flask-like syntax for implementing gRPC methods.
 
 ```python3
-from grpcapi import App
+from grpcapi.v1 import App
 
 app = App()
 

@@ -1,4 +1,4 @@
-import grpcapi
+import grpcapi.v1
 from route_guide_pb2 import (
     Point,
     Feature,
@@ -13,7 +13,7 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-app = grpcapi.App()
+app = grpcapi.v1.App()
 
 
 @app.unary_unary("/routeguide.RouteGuide/GetFeature")
