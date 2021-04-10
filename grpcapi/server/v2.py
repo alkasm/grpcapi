@@ -1,5 +1,5 @@
 import collections
-import importlib
+import inspect
 import typing
 from google.protobuf import message
 import grpc
@@ -43,8 +43,8 @@ class App:
         self.handlers = collections.defaultdict(dict)
 
     def rpc(self, method: InputRpcMethod) -> Identity[RpcMethod]:
-        servicer_name, method_name = method.__qualname__.split(".", 1)
-        mod = importlib.import_module(method.__module__)
+        servicer_name, method_name = method.__qualname__.split(".")
+        mod = inspect.getmodule(method)
         adder = getattr(mod, f"add_{servicer_name}_to_server")
         # Create a pseudo servicer/server and intercept the values gRPC adds.
         extractor = HandlerExtractor(method_name)
